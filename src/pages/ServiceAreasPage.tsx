@@ -38,7 +38,7 @@ export default function ServiceAreasPage() {
             {SERVICE_AREAS.map((a) => (
               <Link
                 key={a.slug}
-                to={`/service-areas/${a.slug}`}
+                to={`/electrician-${a.slug}`}
                 className="group rounded-2xl bg-white p-6 ring-1 ring-gray-200 transition-all hover:ring-yellow-300 hover:shadow-lg"
               >
                 <div className="flex items-center gap-2 text-navy-900">

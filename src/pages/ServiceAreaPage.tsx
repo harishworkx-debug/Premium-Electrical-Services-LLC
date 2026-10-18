@@ -9,11 +9,13 @@ import { SERVICES } from '@/data/services';
 import { faqSchema, breadcrumbSchema } from '@/data/schema';
 
 export default function ServiceAreaPage() {
-  const { slug } = useParams();
-  const area = SERVICE_AREAS.find((a) => a.slug === slug);
+  const params = useParams();
+  const rawSlug = (params.slug || '') as string;
+  const cleanSlug = rawSlug.replace(/^electrician-/, '');
+  const area = SERVICE_AREAS.find((a) => a.slug === cleanSlug || a.slug === rawSlug);
   if (!area) return <Navigate to="/404" replace />;
 
-  const path = `/service-areas/${area.slug}`;
+  const path = `/electrician-${area.slug}`;
   const title = `Electrician in ${area.city}, ${area.state} | ${BUSINESS.shortName}`;
   const description = `Electrical service in ${area.city}, ${area.state}. ${area.blurb} Call ${BUSINESS.phone} to discuss service at your ${area.city} property.`;
 
@@ -119,7 +121,7 @@ export default function ServiceAreaPage() {
             <ul className="mt-4 flex flex-wrap gap-2">
               {SERVICE_AREAS.filter((a) => a.slug !== area.slug).map((a) => (
                 <li key={a.slug}>
-                  <Link to={`/service-areas/${a.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3.5 py-1.5 text-sm text-navy-700 hover:border-yellow-400 hover:bg-yellow-50">
+                  <Link to={`/electrician-${a.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3.5 py-1.5 text-sm text-navy-700 hover:border-yellow-400 hover:bg-yellow-50">
                     <MapPin className="h-3.5 w-3.5 text-yellow-500" />
                     {a.city}, {a.state}
                   </Link>

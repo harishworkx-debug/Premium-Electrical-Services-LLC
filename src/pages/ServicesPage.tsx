@@ -47,7 +47,7 @@ export default function ServicesPage() {
               const Icon = ICONS[s.icon] ?? Wrench;
               return (
                 <article key={s.slug} className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200 transition-all hover:shadow-xl hover:ring-yellow-300">
-                  <Link to={`/services/${s.slug}`} className="block overflow-hidden">
+                  <Link to={`/${s.slug}-${BUSINESS.mainLocationSlug}`} className="block overflow-hidden">
                     <img src={s.image} alt={s.alt} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                   </Link>
                   <div className="flex flex-1 flex-col p-6">
@@ -58,7 +58,7 @@ export default function ServicesPage() {
                       <h2 className="text-lg font-bold text-navy-900">{s.name}</h2>
                     </div>
                     <p className="mt-3 text-sm text-gray-600 leading-relaxed flex-1">{s.description}</p>
-                    <Link to={`/services/${s.slug}`} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 hover:text-yellow-600">
+                    <Link to={`/${s.slug}-${BUSINESS.mainLocationSlug}`} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 hover:text-yellow-600">
                       {s.name} <ArrowRight className="h-4 w-4" />
                     </Link>
                     <a href={BUSINESS.phoneHref} className="mt-3 inline-flex items-center justify-center gap-2 rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-bold text-navy-900 transition-colors hover:bg-yellow-300">
@@ -82,7 +82,7 @@ export default function ServicesPage() {
             <ul className="mt-5 flex flex-wrap gap-2">
               {SERVICE_AREAS.map((a) => (
                 <li key={a.slug}>
-                  <Link to={`/service-areas/${a.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-navy-700 hover:border-yellow-400 hover:bg-yellow-50">
+                  <Link to={`/electrician-${a.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-navy-700 hover:border-yellow-400 hover:bg-yellow-50">
                     {a.city}, {a.state}
                   </Link>
                 </li>

@@ -15,11 +15,11 @@ staticPaths.forEach((p) =>
 );
 
 SERVICES.forEach((s) =>
-  urls.push({ loc: `${base}/services/${s.slug}`, priority: '0.8' })
+  urls.push({ loc: `${base}/${s.slug}-${BUSINESS.mainLocationSlug}`, priority: '0.8' })
 );
 
 SERVICE_AREAS.forEach((a) =>
-  urls.push({ loc: `${base}/service-areas/${a.slug}`, priority: '0.7' })
+  urls.push({ loc: `${base}/electrician-${a.slug}`, priority: '0.7' })
 );
 
 SERVICES.forEach((s) => {

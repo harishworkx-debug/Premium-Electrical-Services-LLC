@@ -66,8 +66,8 @@ export default function Header({ variant = 'home' }: HeaderProps) {
               if (isDropdownKey(link.to)) {
                 const items =
                   link.to === '/services'
-                    ? SERVICES.map((s) => ({ label: s.name, to: `/services/${s.slug}` }))
-                    : SERVICE_AREAS.map((a) => ({ label: `${a.city}, ${a.state}`, to: `/service-areas/${a.slug}` }));
+                    ? SERVICES.map((s) => ({ label: s.name, to: `/${s.slug}-${BUSINESS.mainLocationSlug}` }))
+                    : SERVICE_AREAS.map((a) => ({ label: `${a.city}, ${a.state}`, to: `/electrician-${a.slug}` }));
                 return (
                   <div key={link.to} className="group/dropdown relative">
                     <Link
@@ -157,8 +157,8 @@ export default function Header({ variant = 'home' }: HeaderProps) {
                 const expanded = mobileExpanded === link.to;
                 const items =
                   link.to === '/services'
-                    ? SERVICES.map((s) => ({ label: s.name, to: `/services/${s.slug}` }))
-                    : SERVICE_AREAS.map((a) => ({ label: `${a.city}, ${a.state}`, to: `/service-areas/${a.slug}` }));
+                    ? SERVICES.map((s) => ({ label: s.name, to: `/${s.slug}-${BUSINESS.mainLocationSlug}` }))
+                    : SERVICE_AREAS.map((a) => ({ label: `${a.city}, ${a.state}`, to: `/electrician-${a.slug}` }));
                 return (
                   <div key={link.to} className="rounded-md overflow-hidden">
                     <div className="flex items-stretch">

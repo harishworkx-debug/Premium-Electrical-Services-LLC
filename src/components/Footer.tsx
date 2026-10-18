@@ -51,7 +51,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {SERVICES.slice(0, 7).map((s) => (
                 <li key={s.slug}>
-                  <Link to={`/services/${s.slug}`} className="text-sm text-white/70 hover:text-yellow-300 transition-colors">
+                  <Link to={`/${s.slug}-${BUSINESS.mainLocationSlug}`} className="text-sm text-white/70 hover:text-yellow-300 transition-colors">
                     {s.name}
                   </Link>
                 </li>
@@ -69,7 +69,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {SERVICE_AREAS.slice(0, 7).map((a) => (
                 <li key={a.slug}>
-                  <Link to={`/service-areas/${a.slug}`} className="text-sm text-white/70 hover:text-yellow-300 transition-colors">
+                  <Link to={`/electrician-${a.slug}`} className="text-sm text-white/70 hover:text-yellow-300 transition-colors">
                     {a.city}, {a.state}
                   </Link>
                 </li>

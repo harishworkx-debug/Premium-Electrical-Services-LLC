@@ -19,7 +19,7 @@ export default function ServicePage() {
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return <Navigate to="/404" replace />;
 
-  const path = `/services/${service.slug}`;
+  const path = `/${service.slug}/${BUSINESS.mainLocationSlug}`;
   const Icon = ICONS[service.icon] ?? Wrench;
   const title = `${service.name} in ${BUSINESS.serviceRegion}`;
   const description = `${service.short} Call ${BUSINESS.phone} for ${service.name.toLowerCase()} in the St. Louis area.`;
@@ -115,7 +115,7 @@ export default function ServicePage() {
                 if (!r) return null;
                 return (
                   <li key={rslug}>
-                    <Link to={`/services/${r.slug}`} className="group flex items-center justify-between rounded-lg border border-gray-200 p-4 hover:border-yellow-400 hover:shadow-md transition">
+                    <Link to={`/${r.slug}/${BUSINESS.mainLocationSlug}`} className="group flex items-center justify-between rounded-lg border border-gray-200 p-4 hover:border-yellow-400 hover:shadow-md transition">
                       <span className="font-medium text-navy-900">{r.name}</span>
                       <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-yellow-500" />
                     </Link>
@@ -131,7 +131,7 @@ export default function ServicePage() {
             <ul className="mt-4 flex flex-wrap gap-2">
               {SERVICE_AREAS.map((a) => (
                 <li key={a.slug}>
-                  <Link to={`/${service.slug}-${a.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3.5 py-1.5 text-sm text-navy-700 hover:border-yellow-400 hover:bg-yellow-50">
+                  <Link to={`/${service.slug}/${a.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3.5 py-1.5 text-sm text-navy-700 hover:border-yellow-400 hover:bg-yellow-50">
                     <MapPin className="h-3.5 w-3.5 text-yellow-500" />
                     {a.city}, {a.state}
                   </Link>

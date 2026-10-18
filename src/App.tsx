@@ -32,13 +32,21 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/:slug" element={<ServicePage />} />
             <Route path="/service-areas" element={<ServiceAreasPage />} />
-            <Route path="/service-areas/:slug" element={<ServiceAreaPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+
+            {/* Individual city electrician hub: /electrician-{location-slug} */}
+            <Route path="/electrician-:slug" element={<ServiceAreaPage />} />
+
+            {/* Every individual service-location page: /{service-slug}-{location-slug} */}
             <Route path="/:slug" element={<ServiceLocationPage />} />
+
+            {/* Backward compatibility fallbacks */}
+            <Route path="/services/:slug" element={<ServicePage />} />
+            <Route path="/service-areas/:slug" element={<ServiceAreaPage />} />
+            <Route path="/:serviceSlug/:areaSlug" element={<ServiceLocationPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

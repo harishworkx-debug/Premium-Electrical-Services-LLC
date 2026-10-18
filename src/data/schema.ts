@@ -26,6 +26,13 @@ export function localBusinessSchema() {
         },
       })),
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '65',
+      bestRating: '5',
+      worstRating: '1',
+    },
     sameAs: [BUSINESS.googleMaps],
   };
 }
