@@ -1,0 +1,17 @@
+{
+  "name": "Premium Electrical Services LLC",
+  "short_name": "Premium Electrical",
+  "description": "Electrician serving the greater St. Louis, Missouri area with residential and commercial electrical service.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1830",
+  "theme_color": "#0d1830",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
