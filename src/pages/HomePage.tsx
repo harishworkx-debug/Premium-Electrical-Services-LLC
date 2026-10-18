@@ -91,7 +91,7 @@ const PROCESS_STEPS = [
   {
     step: '01',
     title: 'Direct Phone Consultation',
-    description: 'Call us directly at 913-456-4208. You speak straight with an electrician who understands electrical systems, not an automated answering machine or ticketing queue.',
+    description: `Call us directly at ${BUSINESS.phone}. You speak straight with an electrician who understands electrical systems, not an automated answering machine or ticketing queue.`,
   },
   {
     step: '02',

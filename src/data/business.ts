@@ -1,8 +1,8 @@
 export const BUSINESS = {
   name: 'Premium Electrical Services LLC',
   shortName: 'Premium Electrical',
-  phone: '913-456-4208',
-  phoneHref: 'tel:+19134564208',
+  phone: '+19135858044',
+  phoneHref: 'tel:+19135858044',
   category: 'Electrician',
   website: 'https://www.premiumelectricalstl.com/',
   googleMaps: 'https://maps.app.goo.gl/FK2HL6eo3ZDSNVUZ9',
