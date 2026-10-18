@@ -9,6 +9,7 @@ import ServicePage from '@/pages/ServicePage';
 import ServiceAreasPage from '@/pages/ServiceAreasPage';
 import ServiceAreaPage from '@/pages/ServiceAreaPage';
 import ServiceLocationPage from '@/pages/ServiceLocationPage';
+import DynamicSlugPage from '@/pages/DynamicSlugPage';
 import AboutPage from '@/pages/AboutPage';
 import ReviewsPage from '@/pages/ReviewsPage';
 import ContactPage from '@/pages/ContactPage';
@@ -37,11 +38,8 @@ export default function App() {
             <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/contact" element={<ContactPage />} />
 
-            {/* Individual city electrician hub: /electrician-{location-slug} */}
-            <Route path="/electrician-:slug" element={<ServiceAreaPage />} />
-
-            {/* Every individual service-location page: /{service-slug}-{location-slug} */}
-            <Route path="/:slug" element={<ServiceLocationPage />} />
+            {/* Scalable dynamic slug router: /electrician-{location}, /{service}-{location}, /{service} */}
+            <Route path="/:slug" element={<DynamicSlugPage />} />
 
             {/* Backward compatibility fallbacks */}
             <Route path="/services/:slug" element={<ServicePage />} />

@@ -131,7 +131,7 @@ export default function ServicePage() {
             <ul className="mt-4 flex flex-wrap gap-2">
               {SERVICE_AREAS.map((a) => (
                 <li key={a.slug}>
-                  <Link to={`/${service.slug}/${a.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3.5 py-1.5 text-sm text-navy-700 hover:border-yellow-400 hover:bg-yellow-50">
+                  <Link to={`/${service.slug}-${a.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3.5 py-1.5 text-sm text-navy-700 hover:border-yellow-400 hover:bg-yellow-50">
                     <MapPin className="h-3.5 w-3.5 text-yellow-500" />
                     {a.city}, {a.state}
                   </Link>

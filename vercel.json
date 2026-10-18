@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/robot.txt",
+      "destination": "/robots.txt",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

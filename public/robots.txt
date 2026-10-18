@@ -1,4 +1,12 @@
+# robots.txt for Premium Electrical Services LLC
+# Production Website: https://www.premiumelectricalstl.com/
+
 User-agent: *
 Allow: /
+Disallow: /404
 
+# Host
+Host: https://www.premiumelectricalstl.com
+
+# Sitemaps
 Sitemap: https://www.premiumelectricalstl.com/sitemap.xml

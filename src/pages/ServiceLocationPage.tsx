@@ -144,7 +144,7 @@ export default function ServiceLocationPage() {
                   href="#overview"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
                 >
-                  Service Details <ArrowRight className="h-4 w-4" />
+                  {service.name} <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
 

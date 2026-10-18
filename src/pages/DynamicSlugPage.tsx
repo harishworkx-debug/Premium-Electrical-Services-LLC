@@ -29,7 +29,8 @@ export default function DynamicSlugPage() {
   }
 
   // 3. Check if it's an exact service-location page: /{service-slug}-{location-slug}
-  const area = SERVICE_AREAS.find((a) => slug.endsWith(`-${a.slug}`));
+  const sortedAreas = [...SERVICE_AREAS].sort((a, b) => b.slug.length - a.slug.length);
+  const area = sortedAreas.find((a) => slug.endsWith(`-${a.slug}`));
   if (area) {
     const service = SERVICES.find((s) => slug === `${s.slug}-${area.slug}`);
     if (service) {

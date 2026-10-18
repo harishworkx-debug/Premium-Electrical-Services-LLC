@@ -353,7 +353,7 @@ export default function HomePage() {
                         to={`/${s.slug}-${BUSINESS.mainLocationSlug}`}
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 hover:text-yellow-600"
                       >
-                        Service details <ArrowRight className="h-4 w-4" />
+                        {s.name} <ArrowRight className="h-4 w-4" />
                       </Link>
                       <a
                         href={BUSINESS.phoneHref}
